@@ -21,7 +21,8 @@ function livelyPropertyListener(name, val)
 {
     if(name == "texture"){
         img = loadImage(val)
-    }else if(name == "texture"){
+    }
+    else if(name == "speed"){
         rotateZ(frameCount * val);
         rotateX(frameCount * val);
         rotateY(frameCount * val);
