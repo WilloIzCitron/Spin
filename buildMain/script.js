@@ -1,6 +1,6 @@
 
 var img
-
+var speed = 0.01
 
 function setup() {
  createCanvas(windowWidth, windowHeight, WEBGL);
@@ -9,9 +9,9 @@ function setup() {
 }
 function draw() {
   background(220);
-  rotateZ(frameCount * 0.01);
-  rotateX(frameCount * 0.01);
-  rotateY(frameCount * 0.01);
+  rotateZ(frameCount * speed);
+  rotateX(frameCount * speed);
+  rotateY(frameCount * speed);
   texture(img);
   box(300);
 
@@ -23,8 +23,6 @@ function livelyPropertyListener(name, val)
         img = loadImage(val)
     }
     else if(name == "speed"){
-        rotateZ(frameCount * val);
-        rotateX(frameCount * val);
-        rotateY(frameCount * val);
+        speed = val;
     }
 }
